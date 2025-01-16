@@ -32,7 +32,7 @@ $fonttenor: 'Tenor Sans', sans-serif;
   font-family: $fontjosefin;
   @apply flex flex-col gap-2 overflow-hidden;
   &-wrapper {
-    @apply py-3 px-7 font-normal text-xs;
+    @apply py-3 px-7 font-normal text-xs flex items-center justify-center;
   }
 }
 .btn:after {
@@ -57,7 +57,7 @@ h1 {
   font-family: $fonttenor;
 }
 h2 {
-  @apply font-normal text-xl uppercase;
+  @apply font-normal text-xl uppercase text-center;
   font-family: $fonttenor;
 }
 h3 {
@@ -183,16 +183,16 @@ nav.active {
   }
 }
 .about {
-  >div>div:first-child {
+  h3 {
     color: $color1;
     @apply gap-5 flex flex-row items-center justify-center;
   }
-  >div>div:first-child:before {
+  h3:before {
     content: '';
     width: 75px;
     border-top: 1px solid $color2;
   }
-  >div>div:first-child:after {
+  h3:after {
     content: '';
     width: 75px;
     border-top: 1px solid $color2;
@@ -207,9 +207,9 @@ nav.active {
 }
 
 .image {
-  @apply relative w-full flex items-center;
+  @apply relative w-full flex items-center scroll-smooth;
   &-scroll {
-    height: 314px;
+    height: 250px;
     @apply flex overflow-auto gap-5;
   }
   &-btn1 {
@@ -221,11 +221,11 @@ nav.active {
 }
 .image {
   button {
-    margin: 0 60px;
+    margin: 0 30px;
     background-color: $color1;
-    font-size: 4em;
-    width: 60px;
-    height: 60px;
+    font-size: 3em;
+    width: 50px;
+    height: 50px;
     @apply flex items-center justify-center absolute rounded-full text-white font-light border-none;
   }
   button:hover {
@@ -233,8 +233,89 @@ nav.active {
     @apply bg-white;
   }
   img {
-    width: 800px;
+    min-width: 100%;
     @apply h-full object-cover;
+  }
+}
+
+.event {
+  &-top {
+    color: $color2;
+    padding: 30px;
+    border-top: 1px solid;
+    @apply items-center justify-between flex;
+  }
+  &-next {
+    @apply grid grid-cols-2 text-white;
+  }
+  img {
+    @apply w-full h-full object-cover;
+  }
+}
+.event {
+  p {
+    @apply text-center;
+  }
+  figure {
+    @apply w-full h-full;
+  }
+}
+.event-top {
+  p {
+    color: $color1;
+    @apply uppercase text-center;
+  }
+  div {
+    color: $color2;
+    @apply text-3xl flex flex-col items-center gap-1;
+  }
+  &-polygone {
+    /* polygone */
+    width: 15px;
+    height: 15px;
+    background-color: #c6ac83;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    @apply hidden;
+  }
+}
+.event-next-private {
+  background-color: $color1;
+  @apply px-10 py-20 flex flex-col items-center gap-10;
+  &-btn {
+    color: white;
+    @apply flex items-center w-full justify-center gap-5;
+  }
+  >div:first-child {
+    width: 70%;
+    @apply gap-5 flex flex-col;
+  }
+}
+.event-next-private {
+  .btn {
+    color: $color2;
+    &-wrapper {
+      color: $color2;
+      border: 1px solid $color2;
+    }
+  }
+  .btn-wrapper:hover {
+    color: $color1;
+    background-color: $color2;
+  }
+}
+.event-next {
+  h3 {
+    @apply gap-5 flex flex-row items-center justify-center;
+  }
+  h3:before {
+    content: '';
+    width: 75px;
+    border-top: 1px solid $color2;
+  }
+  h3:after {
+    content: '';
+    width: 75px;
+    border-top: 1px solid $color2;
   }
 }
 
@@ -327,6 +408,21 @@ footer {
     }
   }
 
+  .event {
+    &-top {
+      padding: 50px;
+      @apply flex items-center justify-between;
+    }
+  }
+  .event-top {
+    div {
+      @apply text-4xl gap-2;
+    }
+    &-polygone {
+      @apply flex;
+    }
+  }
+
   footer {
     @apply px-10;
   }
@@ -379,13 +475,44 @@ footer {
   }
   .head-top {
     div {
-      @apply flex flex-col;
+      @apply flex flex-col gap-5;
     }
   }
 
   .about {
     >div {
       @apply gap-5;
+    }
+  }
+
+  .image {
+    &-scroll {
+      height: 314px;
+    }
+    button {
+      margin: 0 60px;
+      font-size: 4em;
+      width: 60px;
+      height: 60px;
+    }
+    img {
+      min-width: 650px;
+    }
+  }
+
+  .event {
+    &-top {
+      padding: 60px;
+    }
+  }
+  .event-top {
+    div {
+      @apply text-5xl;
+    }
+    &-polygone {
+      /* polygone */
+      width: 21px;
+      height: 21px;
     }
   }
 
