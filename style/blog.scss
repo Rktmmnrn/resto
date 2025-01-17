@@ -172,12 +172,6 @@ nav.active {
 }
 
 .post {
-  @apply flex flex-col;
-  &-grid {
-    @apply grid grid-cols-3 grid-rows-2 gap-x-5 gap-y-10;
-  }
-}
-.post {
   h2 {
     color: $color1;
     @apply gap-2 flex flex-row items-center justify-center;
@@ -193,14 +187,28 @@ nav.active {
     border-top: 1px solid $color2;
   }
 }
+.post {
+  @apply flex flex-col;
+  &-grid {
+    @apply list-none grid grid-cols-3 grid-rows-2 gap-x-5 gap-y-10;
+  }
+}
 .post-grid {
   &-wrapper {
   }
   figure {
-    height: 400px;
+    border: 1px solid;
+    z-index: -2;
+    @apply absolute h-full w-full top-0;
     img {
       @apply w-full h-full object-cover;
     }
+  }
+}
+.post-grid-wrapper {
+  >div:first-child {
+    height: 400px;
+    @apply relative;
   }
 }
 
