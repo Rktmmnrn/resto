@@ -1,4 +1,5 @@
 import '../style/blog.scss'
+// import '../style/tailwind.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   const rightmenu = document.querySelector('.head-right');

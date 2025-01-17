@@ -18,193 +18,137 @@ $fontjosefin: 'Josefin Sans', sans-serif;
 $fonttenor: 'Tenor Sans', sans-serif;
 
 .logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  margin-right: 20px;
+  @apply flex flex-col items-center justify-center gap-1;
 }
 .logo>span:first-child {
-  text-transform: uppercase;
-  font-size: 28px;
-  font-family: 'Tenor Sans', sans-serif;
-  font-weight: 400;
+  font-family: $fonttenor;
+  @apply uppercase font-normal text-3xl;
 }
 .logo>span:last-child {
   font-size: 4px;
-  text-transform: uppercase;
+  @apply uppercase;
 }
 
 .btn {
-  padding: 12px 26px;
   font-family: $fontjosefin;
-  font-weight: 400;
-  font-size: 12px;
+  @apply flex flex-col gap-2 overflow-hidden;
+  &-wrapper {
+    @apply py-3 px-7 font-normal text-xs flex items-center justify-center;
+  }
+}
+.btn:after {
+  content: '';
+  border: 1px solid;
+  transform: translateX(100%);
+  @apply w-full flex;
+}
+.btn:hover:after {
+  content: '';
+  transform: translateX(0%);
+  @apply duration-100 ease-linear;
 }
 button {
-  cursor: pointer;
-  text-transform: uppercase;
   font-family: $fontjosefin;
-  font-weight: 400;
-  font-size: 12px;
-  color: white;
-  background-color: transparent;
-  border: 1px solid #c6ac83;
+  @apply cursor-pointer uppercase font-normal text-xs bg-transparent border;
 }
 
 // phone
 h1 {
-  font-weight: 400;
   font-family: $fonttenor;
-  font-size: 35px;
-  text-transform: uppercase;
+  @apply font-normal text-4xl uppercase;
 }
 h2 {
-  font-size: 20px;
-  font-weight: 400;
-  font-family: $fonttenor;
-  font-style: normal;
-  text-transform: uppercase;
-}
-h3 {
   font-family: $fontjosefin;
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: 400;
-  text-transform: uppercase;
-  text-align: center;
+  @apply uppercase text-base font-normal text-center;
 }
 p {
   font-family: $fontjosefin;
-  font-size: 12px;
-  line-height: 12px;
-  font-weight: 300;
+  @apply text-xs font-light;
 }
 li {
-  font-size: 12px;
-  line-height: 18px;
+  @apply text-xs;
 }
 a {
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 400;
+  @apply text-sm font-normal;
 }
 
-header {
-  width: 100%;
-  position: fixed;
-  background-color: $color1;
-  color: white;
+.header {
+  border-radius: 0 0 20px 20px;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 0px 0px 20px 20px;
+  background-color: $color1;
+  @apply fixed w-full text-white flex flex-col justify-between;
   a {
-    color: white;
+    @apply text-white uppercase;
     font-family: $fonttenor;
-    text-transform: uppercase;
   }
 }
 .head {
-  display: flex;
-  justify-content: space-between;
   border-bottom: 1px solid $color2;
-  align-items: center;
-  padding: 10px 20px;
+  @apply flex justify-between items-center py-2 px-5 text-white;
   &-top {
-    display: flex;
-    gap: 20px;
+    @apply flex gap-5;
   }
   nav {
-    padding-top: 40px;
-    transform: translateX(100%);
+    @apply flex-col gap-2 items-center absolute flex pt-10 top-[105px] w-full left-0 right-0 h-screen;
+    transform: translateX(120%);
     background-color: $color1;
-    top: 110px;
-    width: 100%;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
   }
   &-right {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
+    @apply cursor-pointer flex flex-col ml-5;
   }
 }
 nav {
   a {
-    padding: 25px;
-    width: 100%;
-    display: inherit;
-    justify-content: center;
+    @apply p-6 w-full justify-center flex;
   }
   a:hover {
-    transition: linear 200ms;
+    color: $color1;
     background-color: $color2;
-    color: #0e1927;
+    @apply ease-linear duration-200;
   }
 }
 nav.active {
-  transition: ease 200ms;
-  transform: translateX(0);
+  @apply ease-linear translate-x-0 duration-200;
 }
 .head:last-child {
-  border: none;
-  justify-content: space-between;
+  @apply border-none justify-between;
 }
 .head-top {
   p:last-child {
     color: $color2;
   }
   figure {
+    @apply rounded-full w-10 h-10 items-center justify-center flex;
     border: 1px solid $color2;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     img {
-      width: 50%;
-      height: 50%;
+      @apply w-1/2 h-1/2;
     }
   }
   div {
-    display: none;
+    @apply hidden;
   }
 }
 .head-top:last-child {
   p {
-    text-transform: capitalize;
+    @apply capitalize;
   }
 }
 .head-right {
   span {
-    width: 30px;
     color: $color2;
     border-top: 1px solid;
     border-bottom: 1px solid;
-    padding: 10px 0px;
+    @apply w-7 py-2 px-0;
   }
   .head-right-span:after { //span
     content: '';
-    position: absolute;
-    width: 30px;
     color: $color2;
     border-top: 1px solid;
     transform: translateX(10px);
+    @apply absolute w-7;
   }
   .head-right-span.active:after {
-    transition: ease 200ms;
-    transform: translateX(0px);
+    @apply ease-linear translate-x-0 duration-200;
   }
 }
 .head:last-child {
@@ -213,117 +157,144 @@ nav.active {
   }
 }
 
+.hero {
+  @apply relative flex justify-center items-center text-white h-screen;
+  figure {
+    z-index: -1;
+    @apply w-full h-full top-24;
+  }
+  img {
+    @apply object-cover w-full h-full;
+  }
+  h1 {
+    @apply absolute;
+  }
+}
+
+.post {
+  @apply flex flex-col;
+  &-grid {
+    @apply grid grid-cols-3 grid-rows-2 gap-x-5 gap-y-10;
+  }
+}
+.post {
+  h2 {
+    color: $color1;
+    @apply gap-2 flex flex-row items-center justify-center;
+  }
+  h2:before {
+    content: '';
+    width: 20px;
+    border-top: 1px solid $color2;
+  }
+  h2:after {
+    content: '';
+    width: 20px;
+    border-top: 1px solid $color2;
+  }
+}
+.post-grid {
+  &-wrapper {
+  }
+  figure {
+    height: 400px;
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+}
 
 footer {
   // margin-top: 80px;
   background-color: $color1;
-  color: white;
-  padding: 0 20px;
+  @apply text-white px-5;
   ul {
-    list-style-type: none;
+    @apply list-none;
   }
   a {
-    color: inherit;
+    @apply text-white;
   }
-  .btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-transform: capitalize;
-  }
-  .btn:hover {
-    color: #0e1927;
-    background-color: #c6ac83;
+}
+footer {
+  .btn-wrapper {
+    border-color: $color2;
+    @apply flex items-center justify-between capitalize;
+    &:hover {
+      background-color: $color2;
+    }
+    &:hover a {
+      color: $color1;
+    }
   }
 }
 .footer-wrapper {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  padding: 30px 0;
+  @apply grid grid-cols-1 py-8 gap-5;
   >div:first-child {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+    @apply flex flex-col items-start;
   }
   &-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
     border-bottom: 1px solid #c6ac83;
-    padding: 10px 0;
+    @apply flex flex-col gap-2 py-2;
   }
   &-last {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    @apply flex flex-col gap-1;
     p {
-      text-transform: uppercase;
+      @apply uppercase;
     }
   }
 }
 .footer-wrapper:last-child {
-  display: flex;
-  justify-content: space-between;
   border-top: 1px solid #c6ac83;
+  @apply flex justify-between;
 }
 .footer-wrapper-list:last-child {
-  border: none;
+  @apply border-none;
 }
 .footer-wrapper-list {
   >li:first-child {
-    text-transform: uppercase;
+    @apply uppercase;
   }
   img:hover {
-  scale: 120%;
-  transition: 500ms;
-}
+    scale: 120%;
+    @apply duration-500;
+  }
 }
 
 
 @media (min-width: 520px) {
   .btn {
-    padding: 14px 30px;
-  }
-  button {
-    font-weight: 400;
-    font-size: 14px;
+    &-wrapper {
+      @apply py-4 px-8;
+    }
   }
   h1 {
-    font-size: 45px;
+    @apply text-5xl;
   }
   h2 {
-    font-size: 25px;
-  }
-  h3 {
-    font-size: 18px;
+    @apply text-lg;
   }
   p {
     font-size: 16px;
-    line-height: 20px;
   }
   li {
-    font-size: 16px;
-    line-height: 20px;
+    @apply text-base;
   }
   a {
-    font-size: 14px;
+    @apply text-sm;
   }
 
   .head {
-    padding: 10px 40px;
+    @apply py-3 px-10;
   }
 
   footer {
-    // margin-top: 90px;
-    padding: 0 40px;
+    // margin-top: 100px;
+    @apply px-10;
   }
   .footer-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    @apply grid grid-cols-2 gap-5;
     &-list {
-      border: none;
-      padding: 0;
+      @apply border-none p-0;
     }
   }
 }
@@ -332,81 +303,59 @@ footer {
 // tablette
 @media (min-width: 768px) {
   .btn {
-    padding: 16px 32px;
-    font-size: 16px;
+    &-wrapper {
+      @apply text-base;
+    }
   }
   h1 {
-    font-size: 78px;
+    @apply text-7xl;
   }
   h2 {
-    font-size: 32px;
-  }
-  h3 {
-    font-size: 20px;
-    line-height: 20px;
+    @apply text-xl;
   }
   p {
-    font-size: 20px;
     line-height: 20px;
+    font-size: 20px;
   }
   li {
-    font-size: 20px;
-    line-height: 20px;
+    @apply text-xl;
   }
   a {
-    font-size: 20px;
+    @apply text-xl;
   }
 
-  header {
-    display: flex;
-    flex-direction: column;
+  .header {
+    @apply flex flex-col;
   }
   .head {
-    padding: 15px 60px;
+    @apply py-4 px-16;
     &-top {
-      display: flex;
-      gap: 10px;
+      @apply gap-3;
     }
     nav {
-      top: 150px;
+      top: 135px;
     }
-    &-right {
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      margin-left: 20px;
-    }
-  }
-  .head:last-child {
-    border: none;
   }
   .head-top {
     div {
-      display: flex;
-      flex-direction: column;
-    }
-    figure {
-      display: flex;
+      @apply flex flex-col gap-5;
     }
   }
 
   footer {
     // margin-top: 120px;
-    padding: 0 50px;
+    @apply scroll-px-12;
   }
   .footer-wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 40px 0;
-    gap: 20px;
+    @apply grid-cols-4 py-10 px-0;
     >div:first-child {
       max-width: 250px;
     }
     &-list {
-      gap: 20px;
+      @apply gap-5 border-none;
     }
     &-last {
-      gap: 10px;
+      @apply gap-3;
     }
   }
   .footer-wrapper-list:last-child {
@@ -417,39 +366,22 @@ footer {
 // desktop
 @media (min-width: 1024px) {
 
-  header {
-    border-radius: 0;
-    position: relative;
+  .header {
+    @apply rounded-none relative;
   }
   .head {
-    padding: 20px 60px;
+    @apply py-5 px-16;
     &-top {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
+      @apply flex-row gap-5;
     }
     nav {
-      padding-top: 0;
+      @apply pt-0 top-auto h-auto w-auto relative flex-row gap-16;
       transform: translateX(0);
-      top: auto;
-      height: auto;
-      width: auto;
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      gap: 60px;
-    }
-    &-right {
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      margin-left: 20px;
     }
   }
   nav {
     a {
-      padding: 0;
-      width: auto;
+      @apply p-0 w-auto;
     }
     a:hover {
       color: $color2;
@@ -457,15 +389,19 @@ footer {
     }
   }
 
+  .hero {
+    figure {
+      @apply top-0;
+    }
+  }
+
   footer {
-    padding: 0 60px;
+    @apply px-16;
   }
   .footer-wrapper {
     padding: 60px 0;
     &-last {
-      flex-direction: row;
-      gap: 60px;
-      justify-content: space-between;
+      @apply flex-row gap-16 justify-between;
     }
   }
 }

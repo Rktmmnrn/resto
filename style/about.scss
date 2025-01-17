@@ -53,20 +53,20 @@ button {
 
 // phone
 h1 {
-  @apply font-normal text-4xl uppercase;
   font-family: $fonttenor;
+  @apply font-normal text-4xl uppercase;
 }
 h2 {
-  @apply font-normal text-xl uppercase text-center;
   font-family: $fonttenor;
+  @apply font-normal text-xl uppercase text-center;
 }
 h3 {
-  @apply uppercase text-base font-normal text-center;
   font-family: $fontjosefin;
+  @apply uppercase text-base font-normal text-center;
 }
 p {
-  @apply text-xs font-light;
   font-family: $fontjosefin;
+  @apply text-xs font-light;
 }
 li {
   @apply text-xs;
@@ -81,23 +81,25 @@ main {
 }
 
 .header {
-  @apply fixed w-full text-white z-10 flex flex-col justify-between rounded-b-[20px];
+  border-radius: 0 0 20px 20px;
   background-color: $color1;
+  z-index: 1;
+  @apply fixed w-full text-white flex flex-col justify-between;
   a {
-    @apply text-white uppercase;
     font-family: $fonttenor;
+    @apply text-white uppercase;
   }
 }
 .head {
-  @apply flex justify-between items-center py-2 px-5;
   border-bottom: 1px solid $color2;
+  @apply flex justify-between items-center py-2 px-5;
   &-top {
     @apply flex gap-5;
   }
   nav {
-    @apply flex-col gap-2 items-center absolute flex pt-10 top-[105px] w-full left-0 right-0 h-screen;
     transform: translateX(120%);
     background-color: $color1;
+    @apply flex-col gap-2 items-center absolute flex pt-10 top-[105px] w-full left-0 right-0 h-screen;
   }
   &-right {
     @apply cursor-pointer flex flex-col ml-5;
@@ -141,10 +143,10 @@ nav.active {
 }
 .head-right {
   span {
-    @apply w-7 py-2 px-0;
     color: $color2;
     border-top: 1px solid;
     border-bottom: 1px solid;
+    @apply w-7 py-2 px-0;
   }
   .head-right-span:after { //span
     content: '';
@@ -435,8 +437,8 @@ nav.active {
 
 footer {
   margin-top: 80px;
-  @apply text-white px-5;
   background-color: $color1;
+  @apply text-white px-5;
   ul {
     @apply list-none;
   }
@@ -462,8 +464,8 @@ footer {
     @apply flex flex-col items-start;
   }
   &-list {
-    @apply flex flex-col gap-2 py-2;
     border-bottom: 1px solid #c6ac83;
+    @apply flex flex-col gap-2 py-2;
   }
   &-last {
     @apply flex flex-col gap-1;
@@ -473,8 +475,8 @@ footer {
   }
 }
 .footer-wrapper:last-child {
-  @apply flex justify-between;
   border-top: 1px solid #c6ac83;
+  @apply flex justify-between;
 }
 .footer-wrapper-list:last-child {
   @apply border-none;
@@ -484,13 +486,13 @@ footer {
     @apply uppercase;
   }
   img:hover {
-    @apply duration-500;
     scale: 120%;
+    @apply duration-500;
   }
 }
 
 
-@media (min-width: 512px) {
+@media (min-width: 520px) {
   .btn {
     &-wrapper {
       @apply py-4 px-8;
@@ -614,7 +616,7 @@ footer {
       @apply gap-3;
     }
     nav {
-      top: 130px;
+      top: 135px;
     }
   }
   .head-top {
