@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const rightmenu = document.querySelector('.head-right');
   const spanrightmenu = document.querySelector('.head-right-span');
   const nav = document.querySelector('.head-nav');
-  const imgleft = document.querySelector('.image-btn1');
-  const imgright = document.querySelector('.image-btn2');
+  const imgleft = document.querySelectorAll('.image-btn1');
+  const imgright = document.querySelectorAll('.image-btn2');
 
   rightmenu.addEventListener('click', () => {
     if(nav.classList.contains('active')) {
@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  imgleft.innerHTML = '<';
-  imgright.innerHTML = '>';
+  imgleft[0].innerHTML = '<';
+  imgright[0].innerHTML = '>';
+  imgleft[1].innerHTML = '<';
+  imgright[1].innerHTML = '>';
 })

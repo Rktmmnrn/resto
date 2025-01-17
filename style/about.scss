@@ -75,6 +75,11 @@ a {
   @apply text-sm font-normal;
 }
 
+main {
+  gap: 120px;
+  @apply flex flex-col;
+}
+
 .header {
   @apply fixed w-full text-white z-10 flex flex-col justify-between rounded-b-[20px];
   background-color: $color1;
@@ -212,12 +217,12 @@ nav.active {
     height: 250px;
     @apply flex overflow-auto gap-5;
   }
-  &-btn1 {
-    @apply left-0;
-  }
-  &-btn2 {
-    @apply right-0;
-  }
+}
+.image-btn1 {
+  @apply left-0;
+}
+.image-btn2 {
+  @apply right-0;
 }
 .image {
   button {
@@ -246,7 +251,7 @@ nav.active {
     @apply items-center justify-between flex;
   }
   &-next {
-    @apply grid grid-cols-2 text-white;
+    @apply grid grid-cols-1 text-white;
   }
   img {
     @apply w-full h-full object-cover;
@@ -254,6 +259,7 @@ nav.active {
 }
 .event {
   p {
+    width: 80%;
     @apply text-center;
   }
   figure {
@@ -280,13 +286,13 @@ nav.active {
 }
 .event-next-private {
   background-color: $color1;
-  @apply px-10 py-20 flex flex-col items-center gap-10;
+  @apply px-6 py-10 flex flex-col items-center gap-5;
   &-btn {
     color: white;
-    @apply flex items-center w-full justify-center gap-5;
+    @apply grid items-center w-full justify-center gap-2;
   }
   >div:first-child {
-    width: 70%;
+    width: 100%;
     @apply gap-5 flex flex-col;
   }
 }
@@ -305,7 +311,7 @@ nav.active {
 }
 .event-next {
   h3 {
-    @apply gap-5 flex flex-row items-center justify-center;
+    @apply gap-3 flex flex-row items-center justify-center;
   }
   h3:before {
     content: '';
@@ -319,8 +325,105 @@ nav.active {
   }
 }
 
+.chef {
+  color: $color1;
+  padding: 0 60px;
+  @apply grid grid-cols-3 gap-10 items-center justify-center;
+  &-food {
+    @apply flex flex-col gap-5 items-center;
+  }
+  figure {
+    border: 1px solid;
+    height: 483px;
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+}
+.chef-food {
+  p {
+    @apply text-center;
+  }
+  h2 {
+    width: 80%;
+  }
+  .btn-wrapper {
+    color: $color1;
+  }
+}
+.chef-food {
+  h3 {
+    @apply gap-3 flex flex-row items-center justify-center;
+  }
+  h3:before {
+    content: '';
+    width: 75px;
+    border-top: 1px solid $color2;
+  }
+  h3:after {
+    content: '';
+    width: 75px;
+    border-top: 1px solid $color2;
+  }
+}
+
+.dinning {
+  @apply flex items-center justify-between gap-2;
+  &-wrapper {
+    @apply w-full flex gap-5;
+  }
+}
+.dinning {
+  button {
+    color: $color1;
+    margin: 0 60px;
+    font-size: 3em;
+    width: 50px;
+    height: 50px;
+    @apply flex items-center justify-center rounded-full font-light border-none;
+  }
+  button:hover {
+    background-color: $color1;
+    @apply text-white;
+  }
+}
+.dinning-wrapper {
+  &-div {
+    border: 1px solid $color2;
+    @apply flex flex-col;
+  }
+  &-div:after {
+    content: '';
+    border-bottom: 1px solid $color2;
+    transform: translateY(15px);
+    @apply w-full flex;
+  }
+  span {
+    color: $color2;
+    font-family: $fonttenor;
+    font-size: 68px;
+    @apply font-normal;
+  }
+}
+.dinning-wrapper-div {
+  div {
+    gap: 15px;
+    @apply flex flex-col items-center justify-center m-10;
+  }
+  p {
+    color: $color1;
+    @apply text-center;
+  }
+  p:nth-child(2) {
+    @apply text-2xl font-medium uppercase;
+  }
+  p:last-child {
+    @apply text-xl uppercase font-medium;
+  }
+}
+
 footer {
-  // margin-top: 80px;
+  margin-top: 120px;
   @apply text-white px-5;
   background-color: $color1;
   ul {
@@ -336,6 +439,9 @@ footer {
     @apply flex items-center justify-between capitalize;
     &:hover {
       background-color: $color2;
+    }
+    &:hover a {
+      color: $color1;
     }
   }
 }
@@ -422,6 +528,12 @@ footer {
       @apply flex;
     }
   }
+  .event-next-private {
+    @apply px-8 py-16;
+    &-btn {
+      @apply flex flex-row items-center w-full justify-center gap-2;
+    }
+  }
 
   footer {
     @apply px-10;
@@ -501,6 +613,9 @@ footer {
   }
 
   .event {
+    p {
+      width: 90%;
+    }
     &-top {
       padding: 60px;
     }
@@ -513,6 +628,21 @@ footer {
       /* polygone */
       width: 21px;
       height: 21px;
+    }
+  }
+  .event-next {
+    h3 {
+      @apply gap-5;
+    }
+  }
+  .event-next-private {
+    @apply px-10 py-20 gap-10;
+    &-btn {
+      @apply gap-5;
+    }
+    >div:first-child {
+      width: 70%;
+      @apply gap-5 flex flex-col;
     }
   }
 
@@ -565,6 +695,12 @@ footer {
   .hero {
     figure {
       @apply top-0;
+    }
+  }
+
+  .event {
+    &-next {
+      @apply grid-cols-2;
     }
   }
 
