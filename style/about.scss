@@ -37,7 +37,7 @@ $fonttenor: 'Tenor Sans', sans-serif;
 }
 .btn:after {
   content: '';
-  border: 1px solid;
+  border-top: 1px solid;
   transform: translateX(100%);
   @apply w-full flex;
 }
