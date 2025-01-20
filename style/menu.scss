@@ -722,7 +722,7 @@ footer {
 // desktop
 @media (min-width: 1024px) {
 
-  /* aside */
+  /* hero aside */
   .hero {
     &-right {
       background-color: $color1;
@@ -743,14 +743,13 @@ footer {
     .close {
       width: 80px;
       height: 80px;
-      @apply cursor-pointer top-0 left-0 absolute;
+      @apply cursor-pointer relative;
     }
     button {
       background-color: transparent;
-      height: 25%;
       cursor: default;
-      top: 100px;
-      @apply w-full border-none absolute;
+      z-index: -2;
+      @apply w-full border-none absolute h-full flex
     }
   }
   .hero-right {
@@ -769,8 +768,17 @@ footer {
   }
   .hero-right {
     &-footer {
-      margin: 20px 10px;
-      @apply flex;
+      @apply flex m-5;
+      a {
+        @apply mx-2;
+      }
+      img {
+        @apply w-full h-full object-contain;
+      }
+      img:hover {
+        transition: ease 200ms;
+        scale: 1.5;
+      }
     }
     >div:before {
       content: '';

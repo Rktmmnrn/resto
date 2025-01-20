@@ -177,6 +177,9 @@ nav.active {
   h1 {
     @apply absolute;
   }
+  &-right {
+    @apply hidden;
+  }
 }
 
 .about {
@@ -621,7 +624,7 @@ footer {
   }
   .head-top {
     div {
-      @apply flex flex-col gap-5;
+      @apply flex flex-col;
     }
   }
 
@@ -783,6 +786,75 @@ footer {
       @apply top-0;
     }
   }
+  /* hero aside */
+  .hero {
+    &-right {
+      background-color: $color1;
+      color: white;
+      transform: translateX(100%);
+      @apply flex items-center flex-col absolute gap-5 w-1/2 justify-center text-center h-full right-0;
+    }
+    &-right.able {
+      transform: translateX(0%);
+      transition: ease 200ms;
+      @apply flex;
+    }
+  }
+  .hero-right {
+    p {
+      width: 80%;
+    }
+    .close {
+      width: 80px;
+      height: 80px;
+      @apply cursor-pointer relative;
+    }
+    button {
+      background-color: transparent;
+      cursor: default;
+      z-index: -2;
+      @apply w-full border-none absolute h-full flex;
+    }
+  }
+  .hero-right {
+    span {
+      color: $color2;
+      font-size: 28px;
+      font-family: $fonttenor;
+      gap: 10px;
+      @apply flex items-center flex-col;
+    }
+    span:after {
+      content: '';
+      border-top: 1px solid #c6ac83;
+      width: 100px;
+    }
+  }
+  .hero-right {
+    &-footer {
+      @apply flex m-5;
+      a {
+        @apply mx-2;
+      }
+      img {
+        @apply w-full h-full object-contain;
+      }
+      img:hover {
+        transition: ease 200ms;
+        scale: 1.5;
+      }
+    }
+    >div:before {
+      content: '';
+      border-top: 1px solid #c6ac83;
+      width: 100px;
+    }
+    >div {
+      gap: 10px;
+      @apply flex flex-col items-center;
+    }
+  }
+
 
   .event {
     &-next {
