@@ -163,7 +163,7 @@ nav.active {
 }
 
 .hero {
-  @apply relative flex justify-center items-center text-white h-screen;
+  @apply relative overflow-hidden flex justify-center items-center text-white h-screen;
   figure {
     z-index: -1;
     @apply w-full h-full top-24;
