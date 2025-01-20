@@ -31,15 +31,18 @@ document.addEventListener('DOMContentLoaded', () => {
       rightSect.classList.add('able');
       sectRight.classList.add('active');
     } else {
-      // setTimeout(() => {
-        rightSect.classList.remove('able');
-        rightSect.style.transition = '500ms';
-        sectRight.classList.remove('active');
-        sectRight.style.transition = 'ease 200ms';
-      // }, 200)
+      rightSect.classList.remove('able');
+      rightSect.style.transition = '500ms';
+      sectRight.classList.remove('active');
+      sectRight.style.transition = 'ease 200ms';
     }
 
-    document.getElementById('close').addEventListener('click', () => rightSect.classList.remove('able'))
+    document.querySelector('.close').addEventListener('click', () => {
+      rightSect.classList.remove('able');
+      rightSect.style.transition = 'ease 200ms';
+      sectRight.classList.remove('active');
+      sectRight.style.transition = 'ease 200ms';
+    })
   })
 
   leftbtnDinning.innerHTML = `<`;

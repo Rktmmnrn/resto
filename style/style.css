@@ -2481,12 +2481,12 @@ footer .btn {
   .hero .hero-right.able {
     display: flex;
     transform: translateX(0%);
-    transition: 500ms;
+    transition: ease 500ms;
   }
   .hero .hero-right p {
-    width: 370px;
+    width: 80%;
   }
-  .hero .hero-right #close {
+  .hero .hero-right .close {
     position: absolute;
     top: 0;
     left: 0;

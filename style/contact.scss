@@ -57,9 +57,9 @@ h1 {
   font-family: $fonttenor;
   @apply font-normal text-4xl uppercase;
 }
-h2 {
-  font-family: $fontjosefin;
-  @apply uppercase text-base font-normal text-center;
+h2,h3 {
+  font-family: $fonttenor;
+  @apply font-normal text-xl uppercase text-center;
 }
 p {
   font-family: $fontjosefin;
@@ -176,75 +176,66 @@ nav.active {
   }
 }
 
-.post {
-  h2 {
-    color: $color1;
-    @apply gap-2 flex flex-row items-center justify-center;
-  }
-  h2:before {
-    content: '';
-    width: 75px;
-    border-top: 1px solid $color2;
-  }
-  h2:after {
-    content: '';
-    width: 75px;
-    border-top: 1px solid $color2;
-  }
-}
-.post {
-  margin: 0 20px;
-  @apply flex flex-col gap-10;
-  &-grid {
-    @apply list-none grid grid-cols-1 grid-rows-6 gap-y-5;
-  }
-}
-.post-grid {
+.contact {
+  @apply w-full flex flex-col items-center justify-center;
   &-wrapper {
-    color: $color1;
-    @apply flex flex-col items-start gap-3;
+    @apply flex w-full flex-col gap-3 items-center py-3;
   }
+  &-wrapper:nth-child(2) {
+    border: solid;
+    @apply border-x-0 border-y;
+  }
+}
+.contact-wrapper {
+  >div {
+    background-color: $color1;
+    width: 50px;
+    height: 50px;
+    @apply rounded-full flex items-center justify-center;
+  }
+}
+
+.form {
+  color: $color1;
+  margin: 0 20px;
+  gap: 40px;
+  @apply flex flex-col relative justify-between items-center;
+  &-line {
+    @apply flex flex-col gap-3 items-center;
+  }
+  >div {
+    border: 1px solid $color2;
+    height: 300px;
+    @apply w-2/3 flex items-center justify-center;
+  }
+}
+.form {
   figure {
-    z-index: -2;
-    @apply absolute h-full w-full top-0;
+    height: 250px;
+    @apply absolute w-full;
     img {
       @apply w-full h-full object-cover;
     }
   }
 }
-.post-grid-wrapper {
-  >div:first-child {
-    height: 400px;
-    @apply relative w-full flex flex-col items-start justify-between;
+.form-line {
+  input {
+    @apply w-full px-3 py-4;
   }
-  div>div {
-    padding: 10px;
-    background-color: $color1;
-    @apply flex flex-col text-white items-center;
-  }
-  div:nth-child(2) {
-    border-bottom: 1px solid;
-    @apply flex w-full uppercase pb-3 gap-2;
-  }
-}
-.post-grid-wrapper {
-  >div:last-child {
-    border-bottom: 1px solid;
+  p {
+    @apply text-center;
   }
   button {
     color: $color1;
-    @apply p-1 border-none text-xl;
   }
 }
-.post-grid-wrapper>div:first-child {
-  >p {
-    font-family: $fonttenor;
-    @apply text-lg uppercase m-2 text-white;
-  }
-  span {
-    font-size: 48px;
-    color: $color2;
-    font-family: $fonttenor;
+
+.map {
+  margin: 0 20px;
+  figure {
+    img {
+      @apply w-full h-full object-cover;
+    }
   }
 }
 
@@ -314,8 +305,8 @@ footer {
   h1 {
     @apply text-5xl;
   }
-  h2 {
-    @apply text-lg;
+  h2,h3 {
+    @apply text-2xl;
   }
   p {
     font-size: 16px;
@@ -327,19 +318,20 @@ footer {
     @apply text-sm;
   }
 
+  .form {
+    margin: 0 40px;
+  }
+
+  .map {
+    margin: 0 40px;
+  }
+
   main {
     gap: 100px;
   }
 
   .head {
     @apply py-3 px-10;
-  }
-
-  .post {
-    margin: 0 40px;
-    &-grid {
-      @apply gap-y-7;
-    }
   }
 
   footer {
@@ -365,8 +357,8 @@ footer {
   h1 {
     @apply text-7xl;
   }
-  h2 {
-    @apply text-xl;
+  h2,h3 {
+    @apply text-3xl;
   }
   p {
     line-height: 20px;
@@ -401,27 +393,46 @@ footer {
     }
   }
 
-  .post {
-    margin: 0 60px;
-    &-grid {
-      @apply grid-cols-2 grid-rows-3 gap-x-5 gap-y-10;
-    }
-  }
-  .post-grid {
+  .contact {
+    @apply w-full flex flex-row items-center justify-center;
     &-wrapper {
       @apply gap-5;
     }
-  }
-  .post-grid-wrapper {
-    div:nth-child(2) {
-      @apply pb-5;
+    &-wrapper:nth-child(2) {
+      @apply border-x border-y-0;
     }
   }
-  .post-grid-wrapper>div:first-child {
-    >p {
-      width: 70%;
-      @apply text-xl uppercase m-5;
+  .contact-wrapper {
+    >div {
+      width: 60px;
+      height: 60px;
     }
+  }
+
+  .form {
+    margin: 0 60px;
+    gap: 60px;
+    @apply flex flex-row relative justify-between items-center;
+    &-line {
+      @apply gap-5;
+    }
+    >div {
+      height: 550px;
+      width: 50%;
+    }
+    figure {
+      height: 90%;
+      max-width: 30%;
+    }
+  }
+  .form-line {
+    input {
+      @apply px-4 py-5;
+    }
+  }
+
+  .map {
+    margin: 0 60px;
   }
 
   footer {
@@ -477,12 +488,6 @@ footer {
     }
   }
 
-  .post {
-    &-grid {
-      @apply grid-cols-3 grid-rows-2;
-    }
-  }
-
   footer {
     @apply px-16;
   }
@@ -492,14 +497,4 @@ footer {
       @apply flex-row gap-16 justify-between;
     }
   }
-}
-
-// large screen
-@media (min-width: 1536px) {
- 
-  .post {
-    &-grid {
-      @apply grid-cols-4 grid-rows-2;
-    }
-  } 
 }

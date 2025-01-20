@@ -239,6 +239,9 @@ nav.active {
     width: 100%;
     height: 100%;
   }
+  &-right {
+    @apply hidden;
+  }
 }
 
 .special {
@@ -718,6 +721,67 @@ footer {
 
 // desktop
 @media (min-width: 1024px) {
+
+  /* aside */
+  .hero {
+    &-right {
+      background-color: $color1;
+      color: white;
+      transform: translateX(100%);
+      @apply flex items-center flex-col absolute gap-5 w-1/2 justify-center text-center h-full right-0;
+    }
+    &-right.able {
+      transform: translateX(0%);
+      transition: ease 200ms;
+      @apply flex;
+    }
+  }
+  .hero-right {
+    p {
+      width: 80%;
+    }
+    .close {
+      width: 80px;
+      height: 80px;
+      @apply cursor-pointer top-0 left-0 absolute;
+    }
+    button {
+      background-color: transparent;
+      height: 25%;
+      cursor: default;
+      top: 100px;
+      @apply w-full border-none absolute;
+    }
+  }
+  .hero-right {
+    span {
+      color: $color2;
+      font-size: 28px;
+      font-family: $fonttenor;
+      gap: 10px;
+      @apply flex items-center flex-col;
+    }
+    span:after {
+      content: '';
+      border-top: 1px solid #c6ac83;
+      width: 100px;
+    }
+  }
+  .hero-right {
+    &-footer {
+      margin: 20px 10px;
+      @apply flex;
+    }
+    >div:before {
+      content: '';
+      border-top: 1px solid #c6ac83;
+      width: 100px;
+    }
+    >div {
+      gap: 10px;
+      @apply flex flex-col items-center;
+    }
+  }
 
   header {
     border-radius: 0;
