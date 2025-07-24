@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       sectRight.classList.add('active');
     } else {
       rightSect.classList.remove('able');
-      rightSect.style.transition = '500ms';
+      rightSect.style.transition = 'ease 200ms';
       sectRight.classList.remove('active');
       sectRight.style.transition = 'ease 200ms';
     }
