@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0e1927;
+  --color-ink-soft: #1d2c40;
+  --color-gold: #c6ac83;
+  --color-stone: #9fa5ad;
+
+  --font-display: var(--font-tenor);
+  --font-body: var(--font-josefin);
+}
+
+body {
+  @apply bg-white text-ink font-body antialiased;
+}
+
+button {
+  @apply cursor-pointer;
+}
