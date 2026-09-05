@@ -28,8 +28,8 @@ export function ScrollCarousel({ children, className = "", type = "dark" }: Scro
         type="button"
         onClick={() => scrollByAmount(-1)}
         aria-label="Précédent"
-        className={`absolute left-5 z-20 flex h-15 w-15 items-center justify-center rounded-full text-gold transition-colors
-          ${type === "dark" ? "bg-ink hover:bg-gold hover:text-white" : "border bg-none hover:bg-ink hover:text-gold"}
+        className={`z-20 flex h-15 w-15 items-center justify-center rounded-full transition-colors
+          ${type === "dark" ? "absolute left-5 bg-ink hover:bg-gold hover:text-white text-gold" : "relative text-ink left-0 bg-none hover:bg-ink hover:text-gold"}
           `}
       >
         <ChevronLeft />
@@ -46,8 +46,8 @@ export function ScrollCarousel({ children, className = "", type = "dark" }: Scro
         type="button"
         onClick={() => scrollByAmount(1)}
         aria-label="Suivant"
-        className={`absolute right-5 z-20 flex h-15 w-15 items-center justify-center rounded-full text-gold transition-colors
-          ${type === "dark" ? "bg-ink hover:bg-gold hover:text-white" : "border bg-none hover:bg-ink hover:text-gold"}
+        className={`z-20 flex h-15 w-15 items-center justify-center rounded-full transition-colors
+          ${type === "dark" ? "right-5 absolute bg-ink hover:bg-gold hover:text-white text-gold" : "relative text-ink right-0 bg-none hover:bg-ink hover:text-gold"}
           `}
       >
         <ChevronRight />

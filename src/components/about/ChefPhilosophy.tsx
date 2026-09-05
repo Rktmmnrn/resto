@@ -11,7 +11,7 @@ export function ChefPhilosophy() {
           <Image src="/images/about/chef-1.png" alt="Notre chef" fill className="object-cover" />
         </div>
         <div className="order-1 flex flex-col items-center gap-4 text-center lg:order-2">
-          <SectionHeading eyebrow="our chef" title="our food philosophy" />
+          <SectionHeading eyebrow="our chef" title="our food philosophy" tone="light" />
           <p className="text-sm text-ink/80 sm:text-base">
             Lorem ipsum dolor sit amet consectetur. Pretium felis egestas aliquet et ut netus
             placerat turpis. Ut ullamcorper condimentum tincidunt orci quis ullamcorper. Arcu ut

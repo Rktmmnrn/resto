@@ -25,8 +25,7 @@ export function SectionHeading({
         className={`flex items-center gap-4 font-body text-sm font-normal uppercase tracking-wide ${
           tone === "light" ? "text-ink" : "text-white"
         } ${
-          isCenter
-            ? "before:h-px before:w-10 before:bg-gold after:h-px after:w-10 after:bg-gold"
+          isCenter ? "before:h-px before:w-10 before:bg-gold after:h-px after:w-10 after:bg-gold"
             : "after:h-px after:w-10 after:bg-gold"
         }`}
       >
