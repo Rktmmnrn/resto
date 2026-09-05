@@ -37,7 +37,7 @@ export function ScrollCarousel({ children, className = "", type = "dark" }: Scro
 
       <div
         ref={trackRef}
-        className="flex w-full gap-5 overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="relative flex w-full gap-5 overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {children}
       </div>
